@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentor-Mentee Visualization</title>
+  <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Mentor-Mentee Relationship Visualization</h1>
+        <p class="info">Visualizing connections between bytes (mentors) and bits (mentees)</p>
+      </div>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search by name or username..." />
+        <button id="search-button">Search</button>
+        <div id="search-results" class="search-results"></div>
+      </div>
+    </div>
+
+    <div id="graph-container">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <div>Loading graph data...</div>
+      </div>
+
+      <!-- Hierarchy Panel -->
+      <div id="hierarchy-panel">
+        <button class="hierarchy-close">&times;</button>
+        <h3 id="hierarchy-title">Node Relationships</h3>
+
+        <div class="node-stats">
+          <div class="node-stat">
+            <div class="node-stat-value" id="mentor-count">0</div>
+            <div class="node-stat-label">Mentors</div>
+          </div>
+          <div class="node-stat">
+            <div class="node-stat-value" id="mentee-count">0</div>
+            <div class="node-stat-label">Mentees</div>
+          </div>
+        </div>
+
+        <div class="node-meta">
+          <div class="node-detail">
+            <span class="node-detail-label">Role:</span>
+            <span class="node-role" id="node-role">
+              <span class="role-indicator" id="role-indicator"></span>
+              <span id="role-text">-</span>
+            </span>
+          </div>
+          <div class="node-detail">
+            <span class="node-detail-label">ID:</span>
+            <span id="node-id">-</span>
+          </div>
+        </div>
+
+        <div class="hierarchy-section">
+          <h4>Mentors <span class="hierarchy-count" id="mentors-count">0</span></h4>
+          <ul class="relationship-list" id="mentors-list">
+            <li class="empty-message" id="no-mentors-message">This node has no mentors</li>
+          </ul>
+        </div>
+
+        <div class="hierarchy-section">
+          <h4>Mentees <span class="hierarchy-count" id="mentees-count">0</span></h4>
+          <ul class="relationship-list" id="mentees-list">
+            <li class="empty-message" id="no-mentees-message">This node has no mentees</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <!-- Controls will be added by JavaScript -->
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
